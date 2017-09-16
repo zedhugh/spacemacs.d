@@ -99,6 +99,7 @@
 (setq x-gtk-use-system-tooltips nil);
 
 (add-hook 'css-mode-hook 'rainbow-mode)
+(add-hook 'web-mode-hook 'rainbow-identifiers-mode)
 
 (setq ivy-initial-inputs-alist
   '((org-refile . "^")

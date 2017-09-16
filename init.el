@@ -41,7 +41,7 @@ values."
       colors-colorize-identifiers 'all
       colors-enable-nyan-cat-progress-bar nil)
      ;; gtags
-     ;; lua
+     lua
      php
      ;; latex
      react

@@ -39,7 +39,7 @@ values."
      (colors
       :variables
       colors-colorize-identifiers 'all
-      colors-enable-nyan-cat-progress-bar nil)
+      colors-enable-nyan-cat-progress-bar t)
      ;; gtags
      lua
      php

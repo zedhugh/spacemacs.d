@@ -9,6 +9,11 @@
 ;;
 ;;; License: GPLv3
 
+(defvar czh/company-minimum-prefix-length 1
+  "my own variable for company-minimum-prefix-length")
+(defvar czh/company-idle-delay 0.05
+  "my own variable for company-idle-delay")
+
 ;; config for flycheck front face
 ;; (setq-default flycheck-idle-change-delay 0.05)
 ;; (setq-default flycheck-display-errors-delay 0.05)
@@ -46,15 +51,23 @@
     ;; (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
     ))
 
+;; set my own company-minimum-prefix-length and company-idle-delay
 (with-eval-after-load 'company
   (progn
-    (setq czh/company-minimum-prefix-length 1)
-    (spacemacs|add-company-backends
-      :modes inferior-python-mode web-mode
-      :variables
-      company-minimum-prefix-length czh/company-minimum-prefix-length)
     (setq company-minimum-prefix-length czh/company-minimum-prefix-length)
-    (setq company-idle-delay 0.05)
+    (setq company-idle-delay czh/company-idle-delay)
+    (spacemacs|add-company-backends
+      :backends (company-web-html company-css)
+      :modes web-mode inferior-python-mode
+      :variables
+      company-minimum-prefix-length czh/company-minimum-prefix-length
+      company-idle-delay czh/company-idle-delay)
+    (spacemacs|add-company-backends
+      :backends (company-files company-capf)
+      :modes inferior-python-mode
+      :variables
+      company-minimum-prefix-length czh/company-minimum-prefix-length
+      company-idle-delay czh/company-idle-delay)
     ))
 
 (with-eval-after-load 'flycheck

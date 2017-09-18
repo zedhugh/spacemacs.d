@@ -43,6 +43,7 @@ values."
      ;; gtags
      lua
      php
+     python
      ;; latex
      react
      html

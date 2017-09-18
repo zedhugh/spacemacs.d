@@ -11,7 +11,7 @@
 
 (defvar czh/company-minimum-prefix-length 1
   "my own variable for company-minimum-prefix-length")
-(defvar czh/company-idle-delay 0.05
+(defvar czh/company-idle-delay 0
   "my own variable for company-idle-delay")
 
 ;; config for flycheck front face
@@ -58,7 +58,7 @@
     (setq company-idle-delay czh/company-idle-delay)
     (spacemacs|add-company-backends
       :backends (company-web-html company-css)
-      :modes web-mode inferior-python-mode
+      :modes web-mode
       :variables
       company-minimum-prefix-length czh/company-minimum-prefix-length
       company-idle-delay czh/company-idle-delay)

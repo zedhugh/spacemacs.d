@@ -82,9 +82,9 @@
   (setq flyspell-correct-auto-delay 0.05))
 
 ;; font set
-(setq czh-han-font "Yahei Consolas Hybrid")
+(setq czh-han-font "SimSun")
 (when (eq window-system 'w32)
-  (setq czh-han-font "微软雅黑"))
+  (setq czh-han-font "宋体"))
 (dolist (charset '(kana han cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font) charset
                     (font-spec :family czh-han-font :size 16)))

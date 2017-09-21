@@ -33,12 +33,14 @@
 
 ;; set the default evil state for some major-mode
 (with-eval-after-load 'evil
-  ;; (evil-set-initial-state 'dired-mode 'emacs)
-  (evil-set-initial-state 'messages-buffer-mode 'emacs))
+  (evil-set-initial-state 'dired-mode 'emacs)
+  (evil-set-initial-state 'messages-buffer-mode 'emacs)
+  (evil-set-initial-state 'youdao-dictionary-mode 'emacs))
 
 ;; source code to exec
 (with-eval-after-load 'org
   (progn
+    (set-face-attribute 'org-table nil :font "Ubuntu Mono-14")
     (org-babel-do-load-languages
      'org-babel-load-languages
      '(
@@ -81,13 +83,13 @@
 (with-eval-after-load 'flyspell
   (setq flyspell-correct-auto-delay 0.05))
 
-;; font set
-(setq czh-han-font "SimSun")
-(when (eq window-system 'w32)
-  (setq czh-han-font "宋体"))
-(dolist (charset '(kana han cjk-misc bopomofo))
-  (set-fontset-font (frame-parameter nil 'font) charset
-                    (font-spec :family czh-han-font :size 16)))
+;; chinese font set
+;; (when (eq window-system 'w32)
+;;   (setq czh-han-font "SimSun")
+;;   (setq czh-han-font-size 16)
+;;   (dolist (charset '(kana han cjk-misc bopomofo))
+;;     (set-fontset-font (frame-parameter nil 'font) charset
+;;                       (font-spec :family czh-han-font :size czh-han-font-size))))
 
 ;; 2 spaces indenting both on =js= and =jsx= :
 (setq-default
@@ -115,11 +117,11 @@
 (add-hook 'web-mode-hook 'rainbow-identifiers-mode)
 
 (setq ivy-initial-inputs-alist
-  '((org-refile . "^")
-    (org-agenda-refile . "^")
-    (org-capture-refile . "^")
-    (counsel-M-x . "")
-    (counsel-describe-function . "^")
-    (counsel-describe-variable . "^")
-    (man . "^")
-    (woman . "^")))
+      '((org-refile . "^")
+        (org-agenda-refile . "^")
+        (org-capture-refile . "^")
+        (counsel-M-x . "")
+        (counsel-describe-function . "^")
+        (counsel-describe-variable . "^")
+        (man . "^")
+        (woman . "^")))

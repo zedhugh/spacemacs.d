@@ -54,14 +54,20 @@
     :ensure nil
     :config
     (setq default-input-method "pyim")
+    (setq pyim-page-style 'one-line)
+    (setq-default pyim-english-input-switch-functions
+                  '(pyim-probe-program-mode))
+    (setq-default pyim-punctuation-half-width-functions
+                  '(pyim-probe-punctuation-line-beginning
+                    pyim-probe-punctuation-after-punctuation))
     (pyim-basedict-enable)
     (setq dicts (concat configuration-layer-private-layer-directory "czh/pyim-dicts/"))
     (setq greatdict (concat dicts "pyim-greatdict.pyim"))
     (pyim-extra-dicts-add-dict
-     `(:name Greatdict-elpa
+     `(:name "Greatdict-elpa"
              :file ,greatdict
-             :coding utf-8-unix))
-    (add-to-list 'pyim-dicts pyim-extra-dicts)
+             :coding utf-8-unix
+             :dict-type pinyin-dict))
     ))
 
 (defun czh/post-init-hungry-delete ()

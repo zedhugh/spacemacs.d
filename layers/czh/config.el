@@ -40,7 +40,6 @@
 ;; source code to exec
 (with-eval-after-load 'org
   (progn
-    (set-face-attribute 'org-table nil :font "Ubuntu Mono-14")
     (org-babel-do-load-languages
      'org-babel-load-languages
      '(
@@ -84,12 +83,16 @@
   (setq flyspell-correct-auto-delay 0.05))
 
 ;; chinese font set
-;; (when (eq window-system 'w32)
-;;   (setq czh-han-font "SimSun")
-;;   (setq czh-han-font-size 16)
-;;   (dolist (charset '(kana han cjk-misc bopomofo))
-;;     (set-fontset-font (frame-parameter nil 'font) charset
-;;                       (font-spec :family czh-han-font :size czh-han-font-size))))
+(progn
+  (setq czh-han-font "SimSun")
+  (setq czh-han-font-size 16)
+
+  (when (eq system-type 'gnu/linux)
+    (setq czh-han-font "Emacs SimSun"))
+
+  (dolist (charset '(kana han cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font) charset
+                      (font-spec :family czh-han-font :size czh-han-font-size))))
 
 ;; 2 spaces indenting both on =js= and =jsx= :
 (setq-default

@@ -20,4 +20,4 @@
 
 (global-set-key (kbd "s-d") 'czh/my-mc-mark-next-like-this)
 
-(spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point)
+(spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point-tooltip)

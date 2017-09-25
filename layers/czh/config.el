@@ -63,12 +63,6 @@
       :variables
       company-minimum-prefix-length czh/company-minimum-prefix-length
       company-idle-delay czh/company-idle-delay)
-    (spacemacs|add-company-backends
-      :backends (company-files company-capf)
-      :modes inferior-python-mode
-      :variables
-      company-minimum-prefix-length czh/company-minimum-prefix-length
-      company-idle-delay czh/company-idle-delay)
     ))
 
 (with-eval-after-load 'flycheck

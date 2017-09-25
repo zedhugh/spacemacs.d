@@ -34,8 +34,7 @@
     hungry-delete
     smartparens
     pyim-basedict
-    pyim
-    nodejs-repl)
+    pyim)
   )
 
 (defun czh/init-youdao-dictionary ()
@@ -87,10 +86,5 @@
             (t (save-excursion
                  (ignore-errors (backward-up-list))
                  ad-do-it))))))
-
-(defun czh/init-nodejs-repl()
-  (use-package nodejs-repl
-    :defer t)
-  )
 
 ;;; packages.el ends here

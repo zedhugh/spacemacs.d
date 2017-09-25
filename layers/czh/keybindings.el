@@ -21,3 +21,4 @@
 (global-set-key (kbd "s-d") 'czh/my-mc-mark-next-like-this)
 
 (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point-tooltip)
+(spacemacs/set-leader-keys "op" 'youdao-dictionary-play-voice-at-point)

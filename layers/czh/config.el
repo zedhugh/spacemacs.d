@@ -57,12 +57,6 @@
   (progn
     (setq company-minimum-prefix-length czh/company-minimum-prefix-length)
     (setq company-idle-delay czh/company-idle-delay)
-    (spacemacs|add-company-backends
-     :backends (company-web-html company-css)
-     :modes web-mode
-     :variables
-     company-minimum-prefix-length czh/company-minimum-prefix-length
-     company-idle-delay czh/company-idle-delay)
     ))
 
 (with-eval-after-load 'flycheck
@@ -108,6 +102,8 @@
   (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
   (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
   (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+(add-hook 'web-mode-hook #'(lambda ()
+                             (setq company-minimum-prefix-length czh/company-minimum-prefix-length)))
 
 (setq x-gtk-use-system-tooltips nil);
 

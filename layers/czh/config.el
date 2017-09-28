@@ -58,11 +58,11 @@
     (setq company-minimum-prefix-length czh/company-minimum-prefix-length)
     (setq company-idle-delay czh/company-idle-delay)
     (spacemacs|add-company-backends
-      :backends (company-web-html company-css)
-      :modes web-mode
-      :variables
-      company-minimum-prefix-length czh/company-minimum-prefix-length
-      company-idle-delay czh/company-idle-delay)
+     :backends (company-web-html company-css)
+     :modes web-mode
+     :variables
+     company-minimum-prefix-length czh/company-minimum-prefix-length
+     company-idle-delay czh/company-idle-delay)
     ))
 
 (with-eval-after-load 'flycheck
@@ -77,16 +77,17 @@
   (setq flyspell-correct-auto-delay 0.05))
 
 ;; chinese font set
-(progn
-  (setq czh-han-font "SimSun")
-  (setq czh-han-font-size 16)
+(when (not (eq window-system nil))
+  (progn
+    (setq czh-han-font "SimSun")
+    (setq czh-han-font-size 16)
 
-  (when (eq system-type 'gnu/linux)
-    (setq czh-han-font "Emacs SimSun"))
+    (when (eq system-type 'gnu/linux)
+      (setq czh-han-font "Emacs SimSun"))
 
-  (dolist (charset '(kana han cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font) charset
-                      (font-spec :family czh-han-font :size czh-han-font-size))))
+    (dolist (charset '(kana han cjk-misc bopomofo))
+      (set-fontset-font (frame-parameter nil 'font) charset
+                        (font-spec :family czh-han-font :size czh-han-font-size)))))
 
 ;; 2 spaces indenting both on =js= and =jsx= :
 (setq-default
@@ -112,13 +113,3 @@
 
 (add-hook 'css-mode-hook 'rainbow-mode)
 (add-hook 'web-mode-hook 'rainbow-identifiers-mode)
-
-(setq ivy-initial-inputs-alist
-      '((org-refile . "^")
-        (org-agenda-refile . "^")
-        (org-capture-refile . "^")
-        (counsel-M-x . "")
-        (counsel-describe-function . "^")
-        (counsel-describe-variable . "^")
-        (man . "^")
-        (woman . "^")))

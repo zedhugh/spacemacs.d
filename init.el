@@ -329,12 +329,12 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq configuration-layer--elpa-archives
         '(
-          ;; ("popkit"   . "http://elpa.popkit.org/packages/")
+          ("popkit"   . "http://elpa.popkit.org/packages/")
           ;; ("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
           ;; ("org-cn"   . "http://elpa.zilongshanren.com/org/")
           ;; ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")
-          ("melpa"    . "http://melpa.org/packages/")
-          ("gnu"      . "http://elpa.gnu.org/packages/")
+          ;; ("melpa"    . "http://melpa.org/packages/")
+          ;; ("gnu"      . "http://elpa.gnu.org/packages/")
           ;; ("org"      . "http://orgmode.org/elpa/")
           ))
   )

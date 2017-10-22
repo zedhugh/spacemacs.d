@@ -34,3 +34,9 @@
               (regexp-quote sym))))
         regexp-history)
   (call-interactively 'occur))
+
+(defun czh/company-init ()
+  "set my own company-idle-delay and company-minimum-prefix-length"
+  (interactive)
+  (setq-local company-idle-delay czh/company-idle-delay)
+  (set (make-local-variable 'company-minimum-prefix-length) czh/company-minimum-prefix-length))

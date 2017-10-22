@@ -11,6 +11,7 @@
 
 (defvar czh/company-minimum-prefix-length 1
   "my own variable for company-minimum-prefix-length")
+
 (defvar czh/company-idle-delay 0
   "my own variable for company-idle-delay")
 
@@ -53,11 +54,7 @@
     ))
 
 ;; set my own company-minimum-prefix-length and company-idle-delay
-(with-eval-after-load 'company
-  (progn
-    (setq company-minimum-prefix-length czh/company-minimum-prefix-length)
-    (setq company-idle-delay czh/company-idle-delay)
-    ))
+(add-hook 'company-mode-hook #'czh/company-init)
 
 (with-eval-after-load 'flycheck
   (progn
@@ -102,10 +99,8 @@
   (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
   (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
   (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
-(add-hook 'web-mode-hook #'(lambda ()
-                             (setq company-minimum-prefix-length czh/company-minimum-prefix-length)))
 
 (setq x-gtk-use-system-tooltips nil);
 
 (add-hook 'css-mode-hook 'rainbow-mode)
-(add-hook 'web-mode-hook 'rainbow-identifiers-mode)
+(add-hook 'web-mode-hook 'rainbow-identifiers-mode 'smartparens)

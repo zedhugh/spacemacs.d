@@ -74,13 +74,13 @@
     :defer t
     :init
     (global-hungry-delete-mode)
+;;    (setq-default hungry-delete-chars-to-skip " \t\f\v\n")
     ))
 
 (defun czh/post-init-smartparens ()
   (use-package smartparens
     :defer t
     :init
-    (smartparens-global-mode)
     (defadvice show-paren-function (around fix-show-paren-function activate)
       (cond ((looking-at-p "\\s(") ad-do-it)
             (t (save-excursion

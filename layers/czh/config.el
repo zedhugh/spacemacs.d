@@ -15,12 +15,6 @@
 (defvar czh/company-idle-delay 0
   "my own variable for company-idle-delay")
 
-;; config for flycheck front face
-;; (setq-default flycheck-idle-change-delay 0.05)
-;; (setq-default flycheck-display-errors-delay 0.05)
-;; (setq-default flycheck-display-errors-function
-;;              (quote flycheck-display-error-messages))
-
 ;; config for flyspell delay
 (setq-default flyspell-delay 0.5)
 (setq-default flyspell-correct-auto-delay 0.5)
@@ -56,6 +50,7 @@
 ;; set my own company-minimum-prefix-length and company-idle-delay
 (add-hook 'company-mode-hook #'czh/company-init)
 
+;; config for flycheck front face
 (with-eval-after-load 'flycheck
   (progn
     (setq flycheck-idle-change-delay    0.05)
@@ -103,4 +98,4 @@
 (setq x-gtk-use-system-tooltips nil);
 
 (add-hook 'css-mode-hook 'rainbow-mode)
-(add-hook 'web-mode-hook 'rainbow-identifiers-mode 'smartparens)
+(add-hook 'web-mode-hook 'rainbow-identifiers-mode)

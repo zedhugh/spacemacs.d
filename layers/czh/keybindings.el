@@ -20,5 +20,8 @@
 
 (global-set-key (kbd "s-d") 'czh/my-mc-mark-next-like-this)
 
-(spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point-tooltip)
+(spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
 (spacemacs/set-leader-keys "op" 'youdao-dictionary-play-voice-at-point)
+
+(evil-define-key 'visual evil-surround-mode-map "c" 'evil-surround-change)
+(evil-define-key 'visual evil-surround-mode-map "d" 'evil-surround-delete)

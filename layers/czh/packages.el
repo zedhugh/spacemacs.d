@@ -74,7 +74,7 @@
     :defer t
     :init
     (global-hungry-delete-mode)
-;;    (setq-default hungry-delete-chars-to-skip " \t\f\v\n")
+    (setq-default hungry-delete-chars-to-skip " \t\f\v\n")
     ))
 
 (defun czh/post-init-smartparens ()

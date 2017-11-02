@@ -23,5 +23,5 @@
 (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
 (spacemacs/set-leader-keys "op" 'youdao-dictionary-play-voice-at-point)
 
-(evil-define-key 'visual evil-surround-mode-map "c" 'evil-surround-change)
-(evil-define-key 'visual evil-surround-mode-map "d" 'evil-surround-delete)
+(evil-define-key 'visual evil-surround-mode-map "cc" 'evil-surround-change)
+(evil-define-key 'visual evil-surround-mode-map "cd" 'evil-surround-delete)

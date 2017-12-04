@@ -40,3 +40,7 @@
   (interactive)
   (setq-local company-idle-delay czh/company-idle-delay)
   (set (make-local-variable 'company-minimum-prefix-length) czh/company-minimum-prefix-length))
+
+(defun czh/js-offset ()
+  (interactive)
+  (setq-default js-switch-indent-offset 2))

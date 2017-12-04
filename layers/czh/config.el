@@ -19,7 +19,7 @@
 (setq-default flyspell-delay 0.5)
 (setq-default flyspell-correct-auto-delay 0.5)
 
-(add-hook 'js2-mode-hook #'js2-refactor-mode)
+(add-hook 'js2-mode-hook #'czh/js-offset)
 
 ;; config for dired mode
 (setq dired-recusive-deletes 'always)

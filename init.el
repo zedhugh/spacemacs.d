@@ -35,36 +35,6 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     (colors
-      :variables
-      colors-colorize-identifiers 'all
-      colors-enable-nyan-cat-progress-bar t)
-     ;; gtags
-     lua
-     php
-     python
-     ;; latex
-     react
-     html
-     javascript
-     ivy
-     (auto-completion
-      :variables
-      auto-completion-enable-snippets-in-popup t)
-     better-defaults
-     emacs-lisp
-     git
-     markdown
-     org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     (syntax-checking
-      :variables
-      syntax-checking-enable-tooltips nil
-      syntax-checking-use-original-bitmaps nil)
-     ;; version-control
      czh
      )
    ;; List of additional packages that will be installed without being
@@ -103,6 +73,10 @@ It should only modify the values of Spacemacs settings."
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    ;; (default 5)
    dotspacemacs-elpa-timeout 5
+   ;; If non-nil then Spacelpa repository is the primary source to install
+   ;; a locked version of packages. If nil then Spacemacs will install the lastest
+   ;; version of packages from MELPA. (default nil)
+   dotspacemacs-use-spacelpa nil
    ;; If non-nil then verify the signature for downloaded Spacelpa archives.
    ;; (default nil)
    dotspacemacs-verify-spacelpa-archives nil
@@ -292,14 +266,7 @@ It should only modify the values of Spacemacs settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers '(:relative t
-                                         :disabled-for-modes
-                                         dired-mode
-                                         doc-view-mode
-                                         markdown-mode
-                                         org-mode
-                                         pdf-view-mode
-                                         text-mode)
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil

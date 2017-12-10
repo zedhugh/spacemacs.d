@@ -75,6 +75,8 @@
       (set-fontset-font (frame-parameter nil 'font) charset
                         (font-spec :family czh-han-font :size czh-han-font-size)))))
 
+(set-face-attribute 'italic nil :slant 'italic :underline nil)
+
 ;; 2 spaces indenting both on =js= and =jsx= :
 (setq-default
  ;; standard indent

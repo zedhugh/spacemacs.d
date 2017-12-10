@@ -336,12 +336,12 @@ It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq configuration-layer-elpa-archives
         '(
-          ("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
-          ("org-cn"   . "http://elpa.emacs-china.org/org/")
-          ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")
-          ;; ("melpa"    . "http://melpa.org/packages/")
-          ;; ("gnu"      . "http://elpa.gnu.org/packages/")
-          ;; ("org"      . "http://orgmode.org/elpa/")
+          ("melpa-cn" . "https://elpa.emacs-china.org/melpa/")
+          ("org-cn"   . "https://elpa.emacs-china.org/org/")
+          ("gnu-cn"   . "https://elpa.emacs-china.org/gnu/")
+          ;; ("melpa"    . "https://melpa.org/packages/")
+          ;; ("gnu"      . "https://elpa.gnu.org/packages/")
+          ;; ("org"      . "https://orgmode.org/elpa/")
           ))
   )
 

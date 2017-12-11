@@ -31,7 +31,6 @@
 
 (defconst czh-packages
   '(youdao-dictionary
-    hungry-delete
     smartparens
     pyim-basedict
     pyim)
@@ -67,14 +66,6 @@
              :file ,greatdict
              :coding utf-8-unix
              :dict-type pinyin-dict))
-    ))
-
-(defun czh/post-init-hungry-delete ()
-  (use-package hungry-delete
-    :defer t
-    :init
-    (global-hungry-delete-mode)
-    (setq-default hungry-delete-chars-to-skip " \t\f\v\n")
     ))
 
 (defun czh/post-init-smartparens ()

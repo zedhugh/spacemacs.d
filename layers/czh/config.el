@@ -39,9 +39,9 @@
      'org-babel-load-languages
      '(
        (C      . t)
-       (sh     . t)
        (js     . t)
        (latex  . t)
+       (shell  . t)
        (python . t)
        ))
     ;; (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))

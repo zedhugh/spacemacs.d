@@ -15,6 +15,12 @@
 (defvar czh/company-idle-delay 0
   "my own variable for company-idle-delay")
 
+(defvar czh/org-src-lang-modes
+  '(("js"    . js2)
+    ("html"  . web)
+    ("shell" . sh))
+  "new string map to mode in code block of org-mode")
+
 ;; config for flyspell delay
 (setq-default flyspell-delay 0.5)
 (setq-default flyspell-correct-auto-delay 0.5)
@@ -44,6 +50,11 @@
        (shell  . t)
        (python . t)
        ))
+    (setq org-confirm-babel-evaluate nil
+          org-src-lang-modes
+          (append czh/org-src-lang-modes
+                  org-src-lang-modes))
+
     ;; (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
     ))
 
@@ -101,3 +112,5 @@
 
 (add-hook 'css-mode-hook 'rainbow-mode)
 (add-hook 'web-mode-hook 'rainbow-identifiers-mode)
+
+(add-hook 'prog-mode-hook 'hungry-delete-mode)

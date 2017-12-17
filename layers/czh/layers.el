@@ -7,7 +7,7 @@
    lua
    php
    python
-   ;; latex
+   latex
    react
    html
    javascript
@@ -17,7 +17,7 @@
    better-defaults
    emacs-lisp
    git
-   markdown
+   ;; markdown
    org
    treemacs
    ;; (shell :variables

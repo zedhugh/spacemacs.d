@@ -53,6 +53,9 @@
     :config
     (setq default-input-method "pyim")
     (setq pyim-page-style 'one-line)
+    (if (version< emacs-version "26")
+        (setq pyim-page-tooltip 'popup)
+      (setq pyim-page-tooltip 'child-frame))
     (setq-default pyim-english-input-switch-functions
                   '(pyim-probe-program-mode))
     (setq-default pyim-punctuation-half-width-functions

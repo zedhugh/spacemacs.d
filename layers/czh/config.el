@@ -28,9 +28,9 @@
 
 ;; set the default evil state for some major-mode
 (with-eval-after-load 'evil
-  (evil-set-initial-state 'dired-mode 'emacs)
-  (evil-set-initial-state 'messages-buffer-mode 'emacs)
-  (evil-set-initial-state 'youdao-dictionary-mode 'emacs))
+  (evil-set-initial-state 'dired-mode 'motion)
+  (evil-set-initial-state 'messages-buffer-mode 'motion)
+  (evil-set-initial-state 'youdao-dictionary-mode 'motion))
 
 ;; source code to exec
 (with-eval-after-load 'org

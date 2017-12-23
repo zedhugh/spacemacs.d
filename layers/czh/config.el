@@ -34,7 +34,7 @@
 
 ;; set the default evil state for some major-mode
 (with-eval-after-load 'evil
-  (evil-set-initial-state 'dired-mode 'motion)
+  (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'messages-buffer-mode 'motion)
   (evil-set-initial-state 'youdao-dictionary-mode 'motion))
 
@@ -80,13 +80,15 @@
     (setq czh-han-font-size 16)
 
     (when (eq system-type 'gnu/linux)
-      (setq czh-han-font "Emacs SimSun"))
+      (setq czh-han-font "Emacs SimSun")
+      )
 
     (dolist (charset '(kana han cjk-misc bopomofo))
       (set-fontset-font (frame-parameter nil 'font) charset
                         (font-spec :family czh-han-font :size czh-han-font-size)))))
 
 (set-face-attribute 'italic nil :slant 'italic :underline nil)
+(set-face-attribute 'font-lock-comment-face nil :slant 'italic)
 
 ;; 2 spaces indenting both on =js= and =jsx= :
 (setq-default

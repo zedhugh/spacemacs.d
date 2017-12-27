@@ -63,7 +63,7 @@
                     pyim-probe-punctuation-after-punctuation))
     (pyim-basedict-enable)
     (setq dicts (concat configuration-layer-private-layer-directory "czh/pyim-dicts/"))
-    (setq greatdict (concat dicts "pyim-greatdict.pyim"))
+    (setq greatdict (concat dicts "pyim-greatdict.pyim.gz"))
     (pyim-extra-dicts-add-dict
      `(:name "Greatdict-elpa"
              :file ,greatdict

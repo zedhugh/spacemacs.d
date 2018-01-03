@@ -75,6 +75,7 @@
   (use-package smartparens
     :defer t
     :init
+    (smartparens-global-strict-mode)
     (defadvice show-paren-function (around fix-show-paren-function activate)
       (cond ((looking-at-p "\\s(") ad-do-it)
             (t (save-excursion

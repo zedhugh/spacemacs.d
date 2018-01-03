@@ -116,3 +116,6 @@
 (add-hook 'web-mode-hook 'rainbow-identifiers-mode)
 
 (add-hook 'prog-mode-hook 'hungry-delete-mode)
+
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'text-mode-hook 'display-line-numbers-mode)

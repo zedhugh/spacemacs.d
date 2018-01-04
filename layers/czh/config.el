@@ -21,6 +21,12 @@
     ("shell" . sh))
   "new string map to mode in code block of org-mode")
 
+(defvar czh/show-line-number-way
+  (if (< emacs-major-version 26)
+      'linum-mode
+    'display-line-numbers-mode)
+  "the way used to show line number")
+
 ;; config for flyspell delay
 (setq-default flyspell-delay 0.5)
 (setq-default flyspell-correct-auto-delay 0.5)
@@ -117,5 +123,5 @@
 
 (add-hook 'prog-mode-hook 'hungry-delete-mode)
 
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(add-hook 'text-mode-hook 'display-line-numbers-mode)
+(add-hook 'prog-mode-hook czh/show-line-number-way)
+(add-hook 'text-mode-hook czh/show-line-number-way)

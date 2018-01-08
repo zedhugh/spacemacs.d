@@ -33,14 +33,12 @@
   '(youdao-dictionary
     smartparens
     pyim-basedict
-    pyim)
-  )
+    pyim))
 
 (defun czh/init-youdao-dictionary ()
   (use-package youdao-dictionary
     :defer t
-    )
-  )
+    ))
 
 (defun czh/init-pyim-basedict ()
   (use-package pyim-basedict
@@ -75,11 +73,6 @@
   (use-package smartparens
     :defer t
     :init
-    (smartparens-global-strict-mode)
-    (defadvice show-paren-function (around fix-show-paren-function activate)
-      (cond ((looking-at-p "\\s(") ad-do-it)
-            (t (save-excursion
-                 (ignore-errors (backward-up-list))
-                 ad-do-it))))))
+    (smartparens-global-strict-mode)))
 
 ;;; packages.el ends here

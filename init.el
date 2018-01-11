@@ -73,6 +73,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(vi-tilde-fringe
+                                    nameless
                                     evil-mc)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -371,6 +372,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
           ;; ("gnu"      . "https://elpa.gnu.org/packages/")
           ;; ("org"      . "https://orgmode.org/elpa/")
           ))
+  (setq configuration-layer--elpa-archives configuration-layer-elpa-archives)
   )
 
 (defun dotspacemacs/user-config ()

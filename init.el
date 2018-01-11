@@ -35,6 +35,33 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     (colors :variables
+             colors-colorize-identifiers 'all
+             colors-enable-nyan-cat-progress-bar t)
+     ;; gtags
+     lua
+     php
+     python
+     latex
+     react
+     html
+     javascript
+     ivy
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t)
+     better-defaults
+     emacs-lisp
+     git
+     ;; markdown
+     org
+     ;; (shell :variables
+     ;;        shell-default-height 30
+     ;;        shell-default-position 'bottom)
+     ;; spell-checking
+     (syntax-checking :variables
+                      syntax-checking-enable-tooltips nil
+                      syntax-checking-use-original-bitmaps nil)
+     ;; version-control
      czh
      )
    ;; List of additional packages that will be installed without being

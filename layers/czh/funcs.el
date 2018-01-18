@@ -44,3 +44,14 @@
 (defun czh/js-offset ()
   (interactive)
   (setq-default js-switch-indent-offset 2))
+
+(defun czh/pyim-greatdict-enable ()
+  (setq dicts (concat configuration-layer-private-layer-directory "czh/pyim-dicts/"))
+  (setq greatdict (concat dicts "pyim-greatdict.pyim.gz"))
+  (if (featurep 'pyim)
+      (pyim-extra-dicts-add-dict
+       `(:name "Greatdict-elpa"
+               :file ,greatdict
+               :coding utf-8-unix
+               :dict-type pinyin-dict))
+    (message "pyim don't install, can't enable pyim-greatdict.")))

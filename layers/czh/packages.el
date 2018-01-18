@@ -60,13 +60,7 @@
                   '(pyim-probe-punctuation-line-beginning
                     pyim-probe-punctuation-after-punctuation))
     (pyim-basedict-enable)
-    (setq dicts (concat configuration-layer-private-layer-directory "czh/pyim-dicts/"))
-    (setq greatdict (concat dicts "pyim-greatdict.pyim.gz"))
-    (pyim-extra-dicts-add-dict
-     `(:name "Greatdict-elpa"
-             :file ,greatdict
-             :coding utf-8-unix
-             :dict-type pinyin-dict))
+    (czh/pyim-greatdict-enable)
     ))
 
 (defun czh/post-init-smartparens ()

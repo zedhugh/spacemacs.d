@@ -46,7 +46,7 @@ This function should only modify configuration layer settings."
      react
      html
      javascript
-     ivy
+     (ivy :variables ivy-enable-advanced-buffer-information t)
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t)
      better-defaults

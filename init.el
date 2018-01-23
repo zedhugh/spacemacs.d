@@ -66,6 +66,8 @@ This function should only modify configuration layer settings."
                       syntax-checking-enable-tooltips nil
                       syntax-checking-use-original-bitmaps nil)
      ;; version-control
+     (c-c++ :variables
+            c-c++-enable-google-style t)
      czh
      )
 

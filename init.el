@@ -68,6 +68,7 @@ This function should only modify configuration layer settings."
      ;; version-control
      (c-c++ :variables
             c-c++-enable-google-style t)
+     cmake
      czh
      )
 

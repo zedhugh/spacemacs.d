@@ -32,3 +32,33 @@
                :coding utf-8-unix
                :dict-type pinyin-dict))
     (message "pyim don't install, can't enable pyim-greatdict.")))
+
+(defun czh/font-setup (fontset)
+  "fontset for Emacs GUI Client, the shape of parameter `fontset' like
+  '((default-font-family . default-font-size)
+    (chinese-font-family . chinese-font-size))"
+  (when (not (eq window-system nil))
+    (let ((default-font (car fontset))
+          (chinese-font (nth 1 fontset)))
+      ;; default fontset
+      (let ((family (car default-font))
+            (size (cdr default-font)))
+        (if (member family (font-family-list))
+            (if (functionp 'spacemacs/set-default-font)
+                (spacemacs/set-default-font (list family
+                                                  :size size))
+              (set-face-attribute 'default nil
+                                  :font (font-spec :family family :size size)))
+          (message "Font %s not installed,please install is first." family)))
+
+      ;; fontset for multi-byte code such as Chinese
+      (let ((family (if (eq system-type 'gnu/linux)
+                        (car chinese-font)
+                      "SimSun"))
+            (size (cdr chinese-font)))
+        (if (member family (font-family-list))
+            (dolist (charset '(kana han cjk-misc bopomofo))
+              (set-fontset-font (frame-parameter nil 'font) charset
+                                (font-spec :family family :size size)))
+          (message "Font %s not installed,please install is first." family)
+          )))))

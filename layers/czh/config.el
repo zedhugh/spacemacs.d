@@ -27,6 +27,10 @@
     'display-line-numbers-mode)
   "the way used to show line number")
 
+(defvar czh/fontset '(("Operator Mono" . 14)
+                      ("Emacs SimSun" . 16))
+  "my fontset, params of `czh/font-setup' function")
+
 ;; config for flyspell delay
 (setq-default flyspell-delay 0.5)
 (setq-default flyspell-correct-auto-delay 0.5)
@@ -79,19 +83,7 @@
 (with-eval-after-load 'flyspell
   (setq flyspell-correct-auto-delay 0.05))
 
-;; chinese font set
-(when (not (eq window-system nil))
-  (progn
-    (setq czh-han-font "SimSun")
-    (setq czh-han-font-size 16)
-
-    (when (eq system-type 'gnu/linux)
-      (setq czh-han-font "Emacs SimSun")
-      )
-
-    (dolist (charset '(kana han cjk-misc bopomofo))
-      (set-fontset-font (frame-parameter nil 'font) charset
-                        (font-spec :family czh-han-font :size czh-han-font-size)))))
+(czh/font-setup czh/fontset)
 
 (set-face-attribute 'italic nil :slant 'italic :underline nil)
 (set-face-attribute 'font-lock-comment-face nil :slant 'italic)

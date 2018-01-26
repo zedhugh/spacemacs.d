@@ -50,7 +50,8 @@ This function should only modify configuration layer settings."
      react
      html
      javascript
-     (ivy :variables ivy-enable-advanced-buffer-information t)
+     ;; (ivy :variables ivy-enable-advanced-buffer-information t)
+     helm
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t)
      better-defaults

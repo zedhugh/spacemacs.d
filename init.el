@@ -50,8 +50,7 @@ This function should only modify configuration layer settings."
      react
      html
      javascript
-     ;; (ivy :variables ivy-enable-advanced-buffer-information t)
-     helm
+     (ivy :variables ivy-enable-advanced-buffer-information t)
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t)
      better-defaults
@@ -195,7 +194,7 @@ It should only modify the values of Spacemacs settings."
    ;; to create your own spaceline theme. Value can be a symbol or list with\
    ;; additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator slant :separator-scale 1.2)
+   dotspacemacs-mode-line-theme '(spacemacs :separator arrow :separator-scale 1.2)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)

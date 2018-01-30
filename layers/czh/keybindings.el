@@ -24,6 +24,3 @@
 
 (evil-define-key 'visual evil-surround-mode-map "cc" 'evil-surround-change)
 (evil-define-key 'visual evil-surround-mode-map "cd" 'evil-surround-delete)
-
-(when (featurep 'helm)
-  (global-set-key (kbd "C-s") 'helm-swoop))

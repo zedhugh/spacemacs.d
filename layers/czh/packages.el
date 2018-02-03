@@ -31,13 +31,16 @@
 
 (defconst czh-packages
   '(youdao-dictionary
-    smartparens
     pyim-basedict
-    pyim))
+    pyim
+    smartparens))
 
 (defun czh/init-youdao-dictionary ()
   (use-package youdao-dictionary
     :defer t
+    :config
+    (push '(youdao-dictionary-mode :dedicated t :position bottom)
+          popwin:special-display-config)
     ))
 
 (defun czh/init-pyim-basedict ()
@@ -65,7 +68,6 @@
 
 (defun czh/post-init-smartparens ()
   (use-package smartparens
-    :defer t
     :init
     (smartparens-global-strict-mode)))
 

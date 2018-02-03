@@ -19,8 +19,8 @@
 (global-set-key (kbd "s-v") 'clipboard-yank)
 (global-set-key (kbd "s-c") 'clipboard-kill-ring-save)
 
-(spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
-(spacemacs/set-leader-keys "op" 'youdao-dictionary-play-voice-at-point)
+(spacemacs/set-leader-keys "ys" 'youdao-dictionary-search-at-point)
+(spacemacs/set-leader-keys "yp" 'youdao-dictionary-play-voice-at-point)
 
 (evil-define-key 'visual evil-surround-mode-map "cc" 'evil-surround-change)
 (evil-define-key 'visual evil-surround-mode-map "cd" 'evil-surround-delete)

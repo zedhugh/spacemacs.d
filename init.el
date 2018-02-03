@@ -41,7 +41,7 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      (colors :variables
              colors-colorize-identifiers 'all
-             colors-enable-nyan-cat-progress-bar t)
+             colors-enable-nyan-cat-progress-bar (display-graphic-p))
      ;; gtags
      lua
      php

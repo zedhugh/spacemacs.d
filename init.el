@@ -58,9 +58,10 @@ This function should only modify configuration layer settings."
      git
      ;; markdown
      org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
+     shell-scripts
      ;; spell-checking
      (syntax-checking :variables
                       syntax-checking-enable-tooltips nil

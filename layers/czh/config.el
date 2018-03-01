@@ -109,6 +109,10 @@
   (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
   (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
+;; additional magic-mode-alist for react-mode
+(add-to-list 'magic-mode-alist
+             '("import\s+.*+\s+from\s+['\"]react['\"]" . react-mode))
+
 (setq x-gtk-use-system-tooltips nil);
 
 (add-hook 'css-mode-hook 'rainbow-mode)
